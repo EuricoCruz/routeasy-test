@@ -31,8 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const deliveryRoutes = require('./routes/deliveryRoutes')
-app.use('/', deliveryRoutes);
+const router = require('./routes/router')
+app.use('/', router);
 
 app.listen(process.env.PORT, () => console.log(`server is running on port ${process.env.PORT}`));
 module.exports = app;
